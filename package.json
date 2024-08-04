@@ -3,11 +3,12 @@
   "version": "1.0.0",
   "description": "Backend for e-commerce platform to sell spices",
   "main": "server.js",
-  "type": "module",
   "scripts": {
-    "dev": "nodemon -I --exec node --experimental-specifier-resolution=node --loader ts-node/esm ./src/server.ts",
-    "build": "tsc",
-    "start": "node dist/server.js"
+    "start": "npm run build && npm run swagger && ts-node-dev dist/server.js",
+    "dev": "npm run build && npm run swagger && ts-node-dev src/server.js",
+    "build": "tsc --build ./tsconfig.json",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "swagger": "ts-node dist/config/swagger.js"
   },
   "keywords": [],
   "author": "NexisSoftware",
@@ -17,6 +18,7 @@
     "express": "^4.19.2",
     "express-validator": "^7.1.0",
     "mongoose": "^8.5.2",
+    "swagger-autogen": "^2.23.7",
     "swagger-jsdoc": "^6.2.8",
     "swagger-ui-express": "^5.0.1",
     "ts-node": "^10.9.2",
