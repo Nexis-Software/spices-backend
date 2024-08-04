@@ -18,7 +18,7 @@ app.use(helmet());
 
 // Enable CORS
 const corsOptions = {
-  origin: "*", // Replace with your allowed origin
+  origin: "*", // Replace with your frontend origin
   methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
   credentials: true, // Enable if you need to pass cookies with requests
   optionsSuccessStatus: 204,
